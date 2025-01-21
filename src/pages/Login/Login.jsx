@@ -1,11 +1,7 @@
-import { useState } from 'react';
 import { AuthCard } from '../../components/AuthCard';
-import { InfoCard } from '../../components/InfoCard';
-import { InfoInput } from '../../components/InfoInput';
+
 import loginImage from '../../assets/login_image.png';
 
-import { ProfileInput } from '../../components/ProfileInput';
-import { Button } from '../../components/Button';
 import { LogoTItle } from '../../components/Logo/LogoTitle';
 import { Link, Route, Routes } from 'react-router-dom';
 import { LoginForm } from './LoginForm';
