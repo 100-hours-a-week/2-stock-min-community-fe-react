@@ -4,66 +4,30 @@ import { InfoCard } from '../../components/InfoCard';
 import { InfoInput } from '../../components/InfoInput';
 import loginImage from '../../assets/login_image.png';
 
-import {
-  validateLoginEmail,
-  validatePassword,
-} from '../../utils/ValidationRules';
 import { ProfileInput } from '../../components/ProfileInput';
 import { Button } from '../../components/Button';
 import { LogoTItle } from '../../components/Logo/LogoTitle';
+import { Link, Route, Routes } from 'react-router-dom';
+import { LoginForm } from './LoginForm';
+import { RegistFormFirst } from '../Regist/RegistForm1';
+import { RegistFormSecond } from '../Regist/RegistForm2';
 
 export const Login = () => {
-  const [loginInfo, setLoginInfo] = useState([
-    { title: '이메일', value: '', validateFn: validateLoginEmail },
-    {
-      title: '비밀번호',
-      value: '',
-      validateFn: validatePassword,
-      type: 'password',
-    },
-  ]);
-  const updateValue = (index, newValue) => {
-    setLoginInfo((prev) =>
-      prev.map((item, idx) =>
-        idx === index ? { ...item, value: newValue } : item
-      )
-    );
-  };
-
   return (
     <AuthCard cl='flex justify-between'>
       {/* 로그인창 */}
-      <InfoCard cl='max-w-max p-8'>
-        <div>
-          <div className='mb-10'>
-            <div className='text-4xl font-bold mb-2'>로그인</div>
-            <div className='h-4'>
-              <span className='mr-3'>계정이 없으신가요?</span>
-              <span className='cursor-pointer text-href-color hover:border-b-[1.5px] hover:border-href-color'>
-                회원가입
-              </span>
-            </div>
-          </div>
-          <form>
-            {loginInfo.map((element, index) => (
-              <InfoInput
-                object={element}
-                onChange={(newValue) => updateValue(index, newValue)}
-              ></InfoInput>
-            ))}
-            <Button width='100%' height='30px'>
-              로그인
-            </Button>
-          </form>
-        </div>
-      </InfoCard>
+      <Routes>
+        <Route path='/login' element={<LoginForm />} />
+        <Route path='/regist/1' element={<RegistFormFirst />} />
+        <Route path='/regist/2' element={<RegistFormSecond />} />
+      </Routes>
       {/* 이미지 */}
-      <div className='w-full h-full flex flex-col items-center'>
+      <div className='w-full max-h-[600px] box-content flex flex-col items-center'>
         <div>
           <LogoTItle />
         </div>
-        <div className=''>
-          <img src={loginImage}></img>
+        <div className='h-full'>
+          <img src={loginImage} className='w-full h-[400px]'></img>
         </div>
       </div>
     </AuthCard>
