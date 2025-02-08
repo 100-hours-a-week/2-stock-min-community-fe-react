@@ -1,14 +1,15 @@
-export const Round = ({ width, height }) => {
+export const Round = ({ width, height, children }) => {
   return (
     <>
-      {console.log(width, height)}
       <div
-        className='border rounded-full'
+        className='relative rounded-full'
         style={{
           width: `${width}px`,
           height: `${height}px`,
         }}
-      ></div>
+      >
+        {children}
+      </div>
     </>
   );
 };

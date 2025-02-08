@@ -42,14 +42,14 @@ module.exports = {
       addUtilities({
         '.text-outline': {
           'text-shadow': `
-            2px 2px 0px #ff6E6E,
-            -2px -2px 0px #ff6E6E,
-            2px -2px 0px #ff6E6E,
-            -2px 2px 0px #ff6E6E,
-            0px 2px 0px #ff6E6E,
-            0px -2px 0px #ff6E6E,
-            2px 0px 0px #ff6E6E,
-            -2px 0px 0px #ff6E6E
+            2px 2px 0px #ffb76e,
+            -2px -2px 0px #ffb76e,
+            2px -2px 0px #ffb76e,
+            -2px 2px 0px #ffb76e,
+            0px 2px 0px #ffb76e,
+            0px -2px 0px #ffb76e,
+            2px 0px 0px #ffb76e,
+            -2px 0px 0px #ffb76e
           `,
         },
       });

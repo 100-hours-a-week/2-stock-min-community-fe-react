@@ -8,6 +8,7 @@ import { InfoInput } from '../../components/InfoInput';
 import { Button } from '../../components/Button';
 import { Link } from 'react-router-dom';
 import { TitleText } from '../../components/TitleText';
+import { LogoTItle } from '../../components/Logo/LogoTitle';
 
 export const LoginForm = () => {
   const [loginInfo, setLoginInfo] = useState([
@@ -39,15 +40,13 @@ export const LoginForm = () => {
         </TitleText>
 
         <form>
-          {loginInfo.map((element, index) => (
-            <InfoInput
-              object={element}
-              onChange={(newValue) => updateValue(index, newValue)}
-            ></InfoInput>
-          ))}
-          <Button width='100%' height='30px'>
-            로그인
-          </Button>
+          <InfoInput title='이메일' />
+          <div className=' flex flex-col justify-center items-center'>
+            <Button width='100%' height='40px'>
+              로그인
+            </Button>
+            <LogoTItle cl='text-5xl mt-12' />
+          </div>
         </form>
       </div>
     </InfoCard>

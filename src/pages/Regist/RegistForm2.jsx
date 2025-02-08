@@ -14,23 +14,7 @@ export const RegistFormSecond = () => {
   ];
   return (
     <InfoCard cl='max-w-max p-8 mr-20'>
-      <div className='inline-block mb-8 text-xl font-semibold cursor-pointer'>
-        <Link to='/regist/1'>&lt;</Link>
-      </div>
-
-      <div>
-        <ProfileInput object={registInfo[0]} />
-
-        {registInfo.slice(4).map((element) => (
-          <InfoInput
-            object={element}
-            password={registInfo[2].value}
-          ></InfoInput>
-        ))}
-      </div>
-      <Link to='/login'>
-        <Button>확인</Button>
-      </Link>
+     
     </InfoCard>
   );
 };

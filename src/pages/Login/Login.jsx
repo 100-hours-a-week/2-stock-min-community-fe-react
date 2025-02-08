@@ -15,12 +15,11 @@ export const Login = () => {
       <Routes>
         <Route path='/login' element={<LoginForm />} />
         <Route path='/regist/1' element={<RegistFormFirst />} />
-        <Route path='/regist/2' element={<RegistFormSecond />} />
       </Routes>
       {/* 이미지 */}
       <div className='w-full max-h-[600px] box-content flex flex-col items-center'>
         <div>
-          <LogoTItle />
+          <LogoTItle cl='text-9xl' />
         </div>
         <div className='h-full'>
           <img src={loginImage} className='w-full h-[400px]'></img>
