@@ -1,21 +1,14 @@
 import './App.css';
+import { Card } from './components/Card';
 import { Main } from './pages/Main/Main';
-import { Login } from './pages/Login/Login';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-function MainPage() {
-  return <Main />;
-}
-function LoginPage() {
-  return <Login />;
-}
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Main />} />
-        <Route path='/*' element={<Login />} />
       </Routes>
     </BrowserRouter>
   );

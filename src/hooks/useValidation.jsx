@@ -43,7 +43,7 @@ const useValidation = (initialValues) => {
         error = '* 닉네임에 공백을 포함할 수 없습니다';
       }
     } else if (name === 'profile') {
-      if (!value) {
+      if (value === '' || value === undefined) {
         error = '* 프로필 사진을 설정해주세요';
       }
     }
@@ -60,14 +60,12 @@ const useValidation = (initialValues) => {
   const handleFileChange = (e) => {
     const name = e.target.name;
     const file = e.target.files[0];
-    console.log(file);
-    setFormData((prev) => {
-      const newProfile = file !== undefined ? file : prev[name]; // 파일 유지 로직
-      return { ...prev, [name]: newProfile };
-    });
+
+    setFormData((prev) => ({ ...prev, [name]: file }));
+    const error = validate(name, file);
     setErrors((prev) => ({
       ...prev,
-      [name]: file ? '' : '* 프로필 사진을 설정해주세요',
+      [name]: error,
     }));
   };
 
